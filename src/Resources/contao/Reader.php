@@ -1,6 +1,6 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle;
+namespace LexprodSas\ContaoContentApiBundle;
 
 use Contao\Controller;
 use Contao\Config;

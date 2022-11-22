@@ -1,24 +1,24 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle\Controller;
+namespace LexprodSas\ContaoContentApiBundle\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use DieSchittigs\ContaoContentApiBundle\File;
-use DieSchittigs\ContaoContentApiBundle\ApiModule;
-use DieSchittigs\ContaoContentApiBundle\ContentApiResponse;
-use DieSchittigs\ContaoContentApiBundle\Sitemap;
-use DieSchittigs\ContaoContentApiBundle\SitemapFlat;
-use DieSchittigs\ContaoContentApiBundle\Page;
-use DieSchittigs\ContaoContentApiBundle\Reader;
-use DieSchittigs\ContaoContentApiBundle\UrlHelper;
-use DieSchittigs\ContaoContentApiBundle\TextHelper;
+use LexprodSas\ContaoContentApiBundle\File;
+use LexprodSas\ContaoContentApiBundle\ApiModule;
+use LexprodSas\ContaoContentApiBundle\ContentApiResponse;
+use LexprodSas\ContaoContentApiBundle\Sitemap;
+use LexprodSas\ContaoContentApiBundle\SitemapFlat;
+use LexprodSas\ContaoContentApiBundle\Page;
+use LexprodSas\ContaoContentApiBundle\Reader;
+use LexprodSas\ContaoContentApiBundle\UrlHelper;
+use LexprodSas\ContaoContentApiBundle\TextHelper;
 use Symfony\Component\HttpFoundation\Request;
 use Contao\System;
 use Contao\Config;
-use DieSchittigs\ContaoContentApiBundle\Exceptions\ContentApiNotFoundException;
-use DieSchittigs\ContaoContentApiBundle\ApiUser;
+use LexprodSas\ContaoContentApiBundle\Exceptions\ContentApiNotFoundException;
+use LexprodSas\ContaoContentApiBundle\ApiUser;
 
 /**
  * ContentApiController provides all routes.

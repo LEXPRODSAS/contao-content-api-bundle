@@ -1,8 +1,8 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle;
+namespace LexprodSas\ContaoContentApiBundle;
 
-use DieSchittigs\ContaoContentApiBundle\News\ModuleNewsList;
+use LexprodSas\ContaoContentApiBundle\News\ModuleNewsList;
 use Contao\ContentModel;
 use Contao\StringUtil;
 

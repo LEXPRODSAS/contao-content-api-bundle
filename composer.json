@@ -1,5 +1,5 @@
 {
-  "name": "dieschittigs/contao-content-api-bundle",
+  "name": "lexprodsas/contao-content-api-bundle",
   "description": "Access Contao content via an easy to use JSON-API",
   "type": "contao-bundle",
   "keywords": [
@@ -24,7 +24,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "DieSchittigs\\ContaoContentApiBundle\\": "src/"
+      "LexprodSas\\ContaoContentApiBundle\\": "src/"
     },
     "classmap": [
       "src/Resources/contao/"
@@ -35,6 +35,6 @@
     ]
   },
   "extra": {
-    "contao-manager-plugin": "DieSchittigs\\ContaoContentApiBundle\\ContaoManager\\Plugin"
+    "contao-manager-plugin": "LexprodSas\\ContaoContentApiBundle\\ContaoManager\\Plugin"
   }
 }

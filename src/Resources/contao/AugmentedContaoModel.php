@@ -1,6 +1,6 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle;
+namespace LexprodSas\ContaoContentApiBundle;
 
 /**
  * AugmentedContaoModel is a wrapper class to make handling Contao Models consistent.

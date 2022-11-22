@@ -1,6 +1,6 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle\News;
+namespace LexprodSas\ContaoContentApiBundle\News;
 
 class ModuleNewsList extends \Contao\ModuleNewsList
 {

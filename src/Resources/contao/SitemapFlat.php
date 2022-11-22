@@ -1,6 +1,6 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle;
+namespace LexprodSas\ContaoContentApiBundle;
 
 /**
  * SitemapFlat represents the actual site structure as a key value object.

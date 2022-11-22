@@ -1,9 +1,9 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle;
+namespace LexprodSas\ContaoContentApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use DieSchittigs\ContaoContentApiBundle\DependencyInjection\ContentApiExtension;
+use LexprodSas\ContaoContentApiBundle\DependencyInjection\ContentApiExtension;
 
 class ContaoContentApiBundle extends Bundle
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle\Exceptions;
+namespace LexprodSas\ContaoContentApiBundle\Exceptions;
 
-use DieSchittigs\ContaoContentApiBundle\ContaoJsonSerializable;
-use DieSchittigs\ContaoContentApiBundle\ContaoJson;
+use LexprodSas\ContaoContentApiBundle\ContaoJsonSerializable;
+use LexprodSas\ContaoContentApiBundle\ContaoJson;
 
 /**
  * ContentApiNotFoundException is thrown whenever something is simply not there.

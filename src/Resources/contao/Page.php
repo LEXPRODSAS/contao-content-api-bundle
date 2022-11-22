@@ -1,10 +1,10 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle;
+namespace LexprodSas\ContaoContentApiBundle;
 
 use Contao\PageModel;
 use Contao\Controller;
-use DieSchittigs\ContaoContentApiBundle\Exceptions\ContentApiNotFoundException;
+use LexprodSas\ContaoContentApiBundle\Exceptions\ContentApiNotFoundException;
 
 /**
  * Page augments PageModel for the API.

@@ -1,6 +1,6 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle\ContaoManager;
+namespace LexprodSas\ContaoContentApiBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
@@ -17,7 +17,7 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create('DieSchittigs\ContaoContentApiBundle\ContaoContentApiBundle')
+            BundleConfig::create('LexprodSas\ContaoContentApiBundle\ContaoContentApiBundle')
                 ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle']),
         ];
     }
