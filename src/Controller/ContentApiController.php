@@ -2,8 +2,9 @@
 
 namespace DieSchittigs\ContaoContentApiBundle\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+// use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use DieSchittigs\ContaoContentApiBundle\File;
 use DieSchittigs\ContaoContentApiBundle\ApiModule;
@@ -25,7 +26,7 @@ use DieSchittigs\ContaoContentApiBundle\ApiUser;
  *
  * @Route("/api", defaults={"_scope" = "frontend", "_token_check" = false})
  */
-class ContentApiController extends Controller
+class ContentApiController extends AbstractController
 {
     private $apiUser;
     private $lang = null;
