@@ -1,3 +1,6 @@
+services:
+  _defaults:
+    autoconfigure: true
 parameters:
   content_api_enabled: true
   content_api_readers:

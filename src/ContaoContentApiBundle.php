@@ -1,13 +1,14 @@
 <?php
 
-namespace DieSchittigs\ContaoContentApiBundle;
+namespace LexprodSas\ContaoContentApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use DieSchittigs\ContaoContentApiBundle\DependencyInjection\ContentApiExtension;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use LexprodSas\ContaoContentApiBundle\DependencyInjection\ContentApiExtension;
 
 class ContaoContentApiBundle extends Bundle
 {
-    public function getContainerExtension()
+    public function getContainerExtension(): ?ExtensionInterface
     {
         return new ContentApiExtension();
     }

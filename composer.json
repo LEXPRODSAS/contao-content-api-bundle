@@ -9,8 +9,8 @@
     "json"
   ],
   "require": {
-    "php": "^7.0",
-    "contao/core-bundle": "^4.4"
+    "php": "^7.2",
+    "contao/core-bundle": "^4.13"
   },
   "require-dev": {
     "evert/phpdoc-md": "~0.2.0"
@@ -32,6 +32,6 @@
     ]
   },
   "extra": {
-    "contao-manager-plugin": "DieSchittigs\\ContaoContentApiBundle\\ContaoManager\\Plugin"
+    "contao-manager-plugin": "ContaoManagerPlugin"
   }
 }
