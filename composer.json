@@ -10,10 +10,7 @@
   ],
   "require": {
     "php": "^7.2",
-    "contao/core-bundle": "^4.13"
-  },
-  "require-dev": {
-    "evert/phpdoc-md": "~0.2.0"
+    "contao/core-bundle": "^4.13.0"
   },
   "license": "MIT",
   "authors": [
@@ -33,5 +30,11 @@
   },
   "extra": {
     "contao-manager-plugin": "ContaoManagerPlugin"
+  },
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": true,
+      "ocramius/package-versions": true
+    }
   }
 }
