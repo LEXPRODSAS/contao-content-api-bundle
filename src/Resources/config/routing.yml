@@ -1,3 +1,6 @@
 content_api:
     resource: "@ContaoContentApiBundle/Controller"
     type: annotation
+content_api_page:
+    resource: "@ContaoContentApiBundle/Controller"
+    type: annotation
