@@ -6,3 +6,6 @@ parameters:
     ModuleNewsList: ModuleNewsList
   content_api_headers:
     "Access-Control-Allow-Origin": "*"
+services:
+  _defaults:
+    autoconfigure: true

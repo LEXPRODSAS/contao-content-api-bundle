@@ -11,10 +11,9 @@
   ],
   "require": {
     "php": "^7.0",
-    "contao/core-bundle": "^4.13"
+    "contao/core-bundle": "^4.4"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest",
     "evert/phpdoc-md": "~0.2.0"
   },
   "license": "LGPL-3.0-or-later",
