@@ -4,7 +4,6 @@ namespace DieSchittigs\ContaoContentApiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-// use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use DieSchittigs\ContaoContentApiBundle\File;
 use DieSchittigs\ContaoContentApiBundle\ApiModule;
@@ -18,6 +17,7 @@ use DieSchittigs\ContaoContentApiBundle\TextHelper;
 use Symfony\Component\HttpFoundation\Request;
 use Contao\System;
 use Contao\Config;
+use Contao\Controller;
 use DieSchittigs\ContaoContentApiBundle\Exceptions\ContentApiNotFoundException;
 use DieSchittigs\ContaoContentApiBundle\ApiUser;
 
@@ -26,8 +26,9 @@ use DieSchittigs\ContaoContentApiBundle\ApiUser;
  *
  * @Route("/api", defaults={"_scope" = "frontend", "_token_check" = false})
  */
-class ContentApiController extends AbstractController
+class ContentApiController extends Controller
 {
+    private $headers;
     private $apiUser;
     private $lang = null;
 
@@ -40,11 +41,12 @@ class ContentApiController extends AbstractController
      */
     private function init(Request $request): Request
     {
+        $container = System::getContainer();
         // Commit die if disabled
-        if (!$this->getParameter('content_api_enabled')) {
+        if (!$container->getParameter('content_api_enabled')) {
             die('Content API is disabled');
         }
-        $this->headers = $this->getParameter('content_api_headers');
+        $this->headers = $container->getParameter('content_api_headers');
         if (isset($GLOBALS['TL_HOOKS']['apiBeforeInit']) && is_array($GLOBALS['TL_HOOKS']['apiBeforeInit'])) {
             foreach ($GLOBALS['TL_HOOKS']['apiBeforeInit'] as $callback) {
                 $request = $callback[0]::{$callback[1]}($request);
@@ -57,11 +59,11 @@ class ContentApiController extends AbstractController
             $this->lang = $request->query->get('lang');
         } elseif (Config::get('addLanguageToUrl') && $request->query->has('url')) {
             $url = $request->query->get('url');
-            if (substr($url, 0, 1) != '/') {
+            if (substr($url, 0, 1) !== '/') {
                 $url = "/$url";
             }
             $urlParts = explode('/', $url);
-            $this->lang = count($urlParts) > 1 && strlen($urlParts[1]) == 2 ? $urlParts[1] : null;
+            $this->lang = count($urlParts) > 1 && strlen($urlParts[1]) === 2 ? $urlParts[1] : null;
         }
         if (!$this->lang) {
             $sitemap = new Sitemap();
@@ -78,7 +80,7 @@ class ContentApiController extends AbstractController
             System::loadLanguageFile('default', $this->lang);
         }
         // Initialize Contao
-        $this->container->get('contao.framework')->initialize();
+        $container->get('contao.framework')->initialize();
         $this->apiUser = new ApiUser();
         if (!defined('BE_USER_LOGGED_IN')) {
             define('BE_USER_LOGGED_IN', false);
@@ -224,12 +226,13 @@ class ContentApiController extends AbstractController
      */
     public function readerAction(string $reader, Request $request)
     {
+        $container = System::getContainer();
         $request = $this->init($request);
-        $readers = $this->getParameter('content_api_readers');
+        $readers = $container->getParameter('content_api_readers');
+        $url = $request->query->get('url', '/');
         if (!$readers[$reader]) {
             return new ContentApiResponse('Reader "'.$reader.'" not available'.$url, 404);
         }
-        $url = $request->query->get('url', '/');
         $page = Page::findByUrl($url, false);
         $readerArticle = null;
         if ($page->hasReader($reader)) {
@@ -251,8 +254,10 @@ class ContentApiController extends AbstractController
      */
     public function indexAction(Request $request)
     {
+        $container = System::getContainer();
+        $readerFound = false;
         $request = $this->init($request);
-        $readers = $this->getParameter('content_api_readers');
+        $readers = $container->getParameter('content_api_readers');
         $url = $request->query->get('url', '/');
         $exactMatch = false;
         try {
