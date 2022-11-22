@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace DieSchittigs\ContaoContentApiBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
