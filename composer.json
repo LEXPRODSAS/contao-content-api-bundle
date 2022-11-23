@@ -29,7 +29,7 @@
     ]
   },
   "extra": {
-    "contao-manager-plugin": "ContaoManagerPlugin"
+    "contao-manager-plugin": "LexprodSas\\ContaoContentApiBundle\\ContaoManagerPlugin"
   },
   "config": {
     "allow-plugins": {
