@@ -26,9 +26,9 @@ class ContaoManagerPlugin implements BundlePluginInterface, RoutingPluginInterfa
     /**
      * {@inheritdoc}
      */
-    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+    /*public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
         $file = __DIR__.'/Resources/config/routing.yml';
         return $resolver->resolve($file)->load($file);
-    }
+    }*/
 }
