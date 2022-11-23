@@ -12,6 +12,9 @@
     "php": "^7.2",
     "contao/core-bundle": "^4.13.0"
   },
+  "require-dev": {
+    "contao/manager-plugin": "^2.0"
+  },
   "license": "MIT",
   "authors": [
     {
@@ -20,6 +23,9 @@
     }
   ],
   "autoload": {
+    "psr-4": {
+      "LexprodSas\\ContaoContentApiBundle\\": "src/"
+    },
     "classmap": [
       "src/Resources/contao/"
     ],

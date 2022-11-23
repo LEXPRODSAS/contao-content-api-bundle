@@ -15,7 +15,7 @@ class ContaoManagerPlugin implements BundlePluginInterface, RoutingPluginInterfa
     /**
      * {@inheritdoc}
      */
-    public function getBundles(ParserInterface $parser)
+    public function getBundles(ParserInterface $parser): array
     {
         return [
             BundleConfig::create(ContaoContentApiBundle::class)
