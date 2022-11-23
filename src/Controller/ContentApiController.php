@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/api", defaults={"_scope" = "frontend", "_token_check" = false})
+ * @Route("/api", name="content_api",  defaults={"_scope" = "frontend", "_token_check" = false})
  */
 class ContentApiController extends AbstractController
 {
