@@ -1,6 +1,12 @@
 services:
   _defaults:
     autoconfigure: true
+    LexprodSas\ContaoContentApiBundle\Controller\ContentApiController:
+      public: true
+      calls:
+        - method: setContainer
+          arguments: [ '@service_container' ]
+
 parameters:
   content_api_enabled: true
   content_api_readers:

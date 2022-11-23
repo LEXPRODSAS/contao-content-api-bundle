@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Controller;
+namespace LexprodSas\ContaoContentApiBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
-* @Route("/api", name=ContentApiController::class)
-*/
-class ContentApiController
+ * @Route("/api", defaults={"_scope" = "frontend", "_token_check" = false})
+ */
+class ContentApiController extends AbstractController
 {
     public function __invoke(Request $request): Response
     {
